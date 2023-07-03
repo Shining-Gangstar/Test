@@ -1,0 +1,30 @@
+.azul{
+	color:blue
+}
+.azul:hover{
+	color:red;
+}
+#verde{
+	color:green
+}
+#botonquenohacenada{
+	color:salmon;
+	background-color: blue;
+	padding: 1rem;
+	border-radius: 20px;
+	
+}
+.patoparejas{
+	display: flex
+}
+.patopareja{
+	width: 30%;
+    display: inline-block; 
+}
+.patopareja img{
+	width: 100%;
+	height: auto;
+}
+#patoinfo{
+	display: none;
+}
