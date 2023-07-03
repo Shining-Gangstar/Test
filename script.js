@@ -17,13 +17,13 @@ let patos = document.getElementsByClassName("patopareja")
 		patos[1].style.display = "inline-block"
 	}
 }
-let tInfo = 0
+
 function infopatos() {
-	if (tInfo == 0){
-		document.getElementById("patoinfo").style.display = "block"
-		tInfo = 1
+	if (document.getElementById("patoinfo").style.height == "0px"){
+		document.getElementById("patoinfo").style.height = "7rem"
+		console.log("a")
 	} else {
-		document.getElementById("patoinfo").style.display = "none"
-		tInfo = 0
+		document.getElementById("patoinfo").style.height = "0px"
+		console.log("b")
 	}
 }
