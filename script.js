@@ -8,9 +8,8 @@ function getRandomInt(max) {
 function changecolor() {
 	square.style.backgroundColor = colors[getRandomInt(3)]
 }
-
-function togglevisible() {
 let patos = document.getElementsByClassName("patopareja")
+function togglevisible() {
 	if(patos[1].style.display == "inline-block") {
 		patos[1].style.display = "none"
 	} else {
@@ -19,11 +18,9 @@ let patos = document.getElementsByClassName("patopareja")
 }
 
 function infopatos() {
-	if (document.getElementById("patoinfo").style.height == "0px"){
+	if (document.getElementById("patoinfo").offsetHeight == 0){
 		document.getElementById("patoinfo").style.height = "7rem"
-		console.log("a")
 	} else {
 		document.getElementById("patoinfo").style.height = "0px"
-		console.log("b")
 	}
 }
