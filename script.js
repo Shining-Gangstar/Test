@@ -24,3 +24,16 @@ function infopatos() {
 		document.getElementById("patoinfo").style.height = "0px"
 	}
 }
+
+function abrir(id){
+	document.getElementById("patos").style.display = "none"
+	
+	/*
+	- quitar las tarjetas
+	- abrir el json
+	- levantar info del json segun la id
+	- crear un div con la info y colocarlo en #patoinfo
+	*/
+//	patoinfo.innerHTML = '<img src=' + json[0].url + '>'
+	
+}
