@@ -26,20 +26,10 @@ function infopatos() {
 }
 
 function abrir(id){
-	//document.getElementById("patos").style.display = "none"
-	fetch("data.json")
-.then (function(response){
-    return response.json();
- })
- .then (function(Datos){
-    let infohtml = document.querySelector("#patoinfo");
-    let info = ""
-        info += `<div>
-        ${Datos[0].data1}
-		</div>`;
-		console.log(Datos[0].data1)
-    infohtml.innerHTML = info;
- });
+	document.getElementById("patos").style.display = "none"
+	fetch('./data.json')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 	/*
 	- quitar las tarjetas
 	- abrir el json
