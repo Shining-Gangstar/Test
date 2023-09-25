@@ -27,12 +27,18 @@ function infopatos() {
 
 function abrir(id){
 	document.getElementById("patos").style.display = "none"
-	fetch('./data.json')
+	fetch('./info.json')
     .then((response) => response.json())
-    .then((json) => console.log(json));
+    .then((json) => {document.querySelector("#patoinfo").innerHTML = `
+	<div class = "tarjeta">
+		<p>${json[id].subtitulo}<p>
+		<div class = "acordeon" id "primera tarjeta"> 
+			<p> mesi <p>
+		</div>
+	</div>`; console.log(json)})
 	/*
-	- quitar las tarjetas
-	- abrir el json
+	- quitar las tarjetas ✓
+	- abrir el json ✓
 	- levantar info del json segun la id
 	- crear un div con la info y colocarlo en #patoinfo
 	*/
