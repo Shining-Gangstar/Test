@@ -17,25 +17,25 @@ function togglevisible() {
 	}
 }
 
-function infopatos() {
-	if (document.getElementById("patoinfo").offsetHeight == 0){
-		document.getElementById("patoinfo").style.height = "7rem"
+function info(infoid) {
+	if (document.getElementById(infoid).offsetHeight == 0){
+		document.getElementById(infoid).style.height = "7rem"
 	} else {
-		document.getElementById("patoinfo").style.height = "0px"
+		document.getElementById(infoid).style.height = "0px"
 	}
 }
-
+let midata
 function abrir(id){
 	document.getElementById("patos").style.display = "none"
 	fetch('./info.json')
     .then((response) => response.json())
     .then((json) => {document.querySelector("#patoinfo").innerHTML = `
-	<div class = "tarjeta">
+	<div class = "tarjeta" onclick = "info(${json[id].tarjetas[0].id})">
 		<p>${json[id].subtitulo}<p>
-		<div class = "acordeon" id "primera tarjeta"> 
+		<div class = "acordeon" id = "${json[id].tarjetas[0].id}"> 
 			<p> mesi <p>
 		</div>
-	</div>`; console.log(json)})
+	</div>`; console.log(json);  midata = json;})
 	/*
 	- quitar las tarjetas ✓
 	- abrir el json ✓
