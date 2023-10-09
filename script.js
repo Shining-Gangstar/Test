@@ -29,13 +29,14 @@ function abrir(id){
 	document.getElementById("patos").style.display = "none"
 	fetch('./info.json')
     .then((response) => response.json())
-    .then((json) => {document.querySelector("#patoinfo").innerHTML = `
+    .then((json) => for tarjeta in range(length(json[id].tarjetas))
+	{document.querySelector("#patoinfo").innerHTML = document.querySelector("#patoinfo").innerHTML + `
 	<div class = "tarjeta" onclick = "info(${json[id].tarjetas[0].id})">
 		<p>${json[id].subtitulo}<p>
 		<div class = "acordeon" id = "${json[id].tarjetas[0].id}"> 
 			<p> mesi <p>
 		</div>
-	</div>`; console.log(json);  midata = json;})
+	</div>`}; console.log(json);  midata = json;})
 	/*
 	- quitar las tarjetas ✓
 	- abrir el json ✓
