@@ -4,8 +4,8 @@
       "tarjetas":[
          {
             "nombre":"titulo",
-            "texto":"textotextotextotextotextotexto"
-			"id": "test"
+            "texto":"textotextotextotextotextotexto",
+            "id":"test"
          }
       ]
    },

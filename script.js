@@ -18,24 +18,28 @@ function togglevisible() {
 }
 
 function info(infoid) {
-	if (document.getElementById(infoid).offsetHeight == 0){
+	if (document.getElementById(infoid).style.height == 0){
 		document.getElementById(infoid).style.height = "7rem"
 	} else {
-		document.getElementById(infoid).style.height = "0px"
+		document.getElementById(infoid).style.height = 0
 	}
 }
-let midata
 function abrir(id){
 	document.getElementById("patos").style.display = "none"
 	fetch('./info.json')
     .then((response) => response.json())
-    .then((json) => {document.querySelector("#patoinfo").innerHTML = `
-	<div class = "tarjeta" onclick = "info(${json[id].tarjetas[0].id})">
+    .then((json) =>{
+	json[id].tarjetas.forEach((tarjeta) => {
+		
+		document.querySelector("#patoinfo").innerHTML = document.querySelector("#patoinfo").innerHTML + `
+	<div class = "tarjeta" onclick = "info('${tarjeta.id}')">
 		<p>${json[id].subtitulo}<p>
-		<div class = "acordeon" id = "${json[id].tarjetas[0].id}"> 
-			<p> mesi <p>
+		<div class = "acordeon" id = "${tarjeta.id}"> 
+			<p> ${tarjeta.texto} <p>
 		</div>
-	</div>`; console.log(json);  midata = json;})
+	</div>`})}
+	
+	)
 	/*
 	- quitar las tarjetas ✓
 	- abrir el json ✓
